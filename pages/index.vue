@@ -1,23 +1,29 @@
-<script lang="ts">
-import { defineComponent, ref } from 'vue'
+<script setup lang="ts">
+const name = ref('山田')
+const testFunc = () => {
+	return '太郎'
+}
 
-export default defineComponent({
-	setup() {
-		const name = ref('山田')
-		const testFunc = () => {
-			return '太郎'
-		}
-		return {
-			name,
-			testFunc
-		}
-	}
+onMounted(() => {
+	console.log('onMounted')
 })
 
+// useFetch を使って API 叩く
+// 参考: https://zenn.dev/coedo/articles/cc000738a0f069
+const response = useFetch('/api/user', {
+	method: 'POST',
+	baseURL: 'https://xxxx',
+	params: {},
+	body: {}
+})
 </script>
 
 <template>
 	<div>
 		テスト: {{ name }}  {{ testFunc() }}
+		<button>
+			<!-- components は自動でインポートされる -->
+			<AtomsTheButton name="送信する" />
+		</button>
 	</div>
 </template>
