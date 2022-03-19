@@ -10,12 +10,8 @@ onMounted(() => {
 
 // useFetch を使って API 叩く
 // 参考: https://zenn.dev/coedo/articles/cc000738a0f069
-const response = useFetch('/api/user', {
-	method: 'POST',
-	baseURL: 'https://xxxx',
-	params: {},
-	body: {}
-})
+const { data } = useFetch('/api/hello')
+console.log(data.value)
 </script>
 
 <template>
