@@ -12,6 +12,8 @@ onMounted(() => {
 // 参考: https://zenn.dev/coedo/articles/cc000738a0f069
 const { data } = useFetch('/api/hello')
 console.log(data.value)
+
+const foo = useFoo()
 </script>
 
 <template>
@@ -21,5 +23,7 @@ console.log(data.value)
 			<!-- components は自動でインポートされる -->
 			<AtomsTheButton name="送信する" />
 		</button>
+
+		{{ foo }}
 	</div>
 </template>
