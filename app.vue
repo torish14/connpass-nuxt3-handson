@@ -1,5 +1,6 @@
 <template>
   <div>
-    <NuxtWelcome />
+		<!-- pages ディレクトリでルーティングを作成する -->
+    <NuxtPage />
   </div>
 </template>
